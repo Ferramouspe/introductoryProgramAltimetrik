@@ -1,0 +1,93 @@
+body {
+  background: #000000;
+}
+.bg-box {
+  display: inline;
+  float: left;
+  background-color: #303030;
+  height: 660px;
+  width: 630px;
+  border-radius: 10px 0px 0px 10px;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
+}
+h1 {
+  margin-top: 34px;
+  height: 61px;
+  top: calc(50% - 61px / 2 - 267.5px);
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 45px;
+  line-height: 61px;
+  letter-spacing: 2.8px;
+  color: #ffffff;
+}
+.image {
+  display: inline;
+  float: right;
+  height: 660px;
+  border-radius: 0px 10px 10px 0px;
+}
+.box {
+  height: 660px;
+  max-width: 1083px;
+  margin-top: 180px;
+  padding: 0px;
+}
+.bi,
+.bi-person-circle {
+  background-color: #303030;
+  width: 20px;
+  height: 20px;
+  left: 24.03%;
+  right: 74.58%;
+  top: 30.86%;
+  bottom: 67.19%;
+  color: #d1d1d1;
+}
+.input-group-text {
+  background-color: #303030;
+  width: 52px;
+  height: 52px;
+  left: 22.92%;
+  right: 73.47%;
+  top: 29.3%;
+  bottom: 65.62%;
+
+  border: 1px solid #8f8f8f;
+  box-sizing: border-box;
+  border-radius: 8px 0px 0px 8px;
+}
+.form-control {
+  background-color: #303030;
+  width: 278px;
+  height: 52px;
+  top: 29.3%;
+  bottom: 65.62%;
+
+  border: 1px solid #8f8f8f;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+.form-check-label {
+  color: #8f8f8f;
+}
+.btn,
+.btn-primary {
+  width: 100px;
+  height: 40px;
+  background: linear-gradient(180deg, #7cd235 0%, #2bb34f 100%);
+  border-radius: 8px;
+}
+.form-check {
+  margin-top: 42px;
+  margin-left: 150px;
+}
+.btn,
+.btn-primary {
+  margin-left: 100px;
+}
+.p-150 {
+  padding-right: 150px;
+  padding-left: 150px;
+}
