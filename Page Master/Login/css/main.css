@@ -64,14 +64,11 @@ h1 {
   height: 52px;
   top: 29.3%;
   bottom: 65.62%;
-
   border: 1px solid #8f8f8f;
   box-sizing: border-box;
   border-radius: 8px;
 }
-.form-check-label {
-  color: #8f8f8f;
-}
+
 .btn,
 .btn-primary {
   width: 100px;
@@ -79,15 +76,58 @@ h1 {
   background: linear-gradient(180deg, #7cd235 0%, #2bb34f 100%);
   border-radius: 8px;
 }
-.form-check {
-  margin-top: 42px;
-  margin-left: 150px;
+.form-check-input {
+  background-color: #303030;
+  left: 22.92%;
+  right: 75.69%;
+  top: 45.51%;
+  bottom: 52.54%;
+  border: 1px solid #8f8f8f;
+  box-sizing: border-box;
+  border-radius: 4px;
 }
-.btn,
-.btn-primary {
-  margin-left: 100px;
+.form-check-label {
+  color: #8f8f8f;
 }
 .p-150 {
   padding-right: 150px;
   padding-left: 150px;
+}
+.pt-25 {
+  padding-top: 25px;
+}
+.pt-20 {
+  padding-top: 20px;
+}
+.pt-42 {
+  padding-top: 42px;
+}
+.pt-32 {
+  padding-top: 32px;
+}
+.registerNow {
+  height: 19px;
+  left: 22.92%;
+  right: 71.18%;
+  top: calc(50% - 19px / 2 + 8.5px);
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  color: #ffffff;
+}
+.forgotPassword {
+  text-align: right;
+  height: 19px;
+  left: 37.78%;
+  right: 54.17%;
+  top: calc(50% - 19px / 2 + 8.5px);
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: right;
+  color: #ffffff;
 }
