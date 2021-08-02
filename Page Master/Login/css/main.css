@@ -51,6 +51,7 @@ h1 {
 }
 .userPass {
   display: flex;
+  justify-content: flex-end;
 }
 .input-group-text {
   background-color: #303030;
@@ -62,19 +63,18 @@ h1 {
 }
 .form-control-pass {
   background-color: #303030;
-  width: 243px;
+  width: 278px;
   height: 52px;
   top: 29.3%;
   bottom: 65.62%;
-  border-top: 1px solid #8f8f8f;
-  border-bottom: 1px solid #8f8f8f;
-  border-left: 0px;
-  border-right: 0px;
+  border: 1px solid #8f8f8f;
+  border-radius: 0px 8px 8px 0px;
   box-sizing: border-box;
   padding-left: 15px;
   font-family: Open Sans;
   font-size: 14px;
   line-height: 19px;
+  outline: none;
 }
 .form-control-user {
   background-color: #303030;
@@ -89,6 +89,7 @@ h1 {
   font-family: Open Sans;
   font-size: 14px;
   line-height: 19px;
+  outline: none;
 }
 .key {
   height: 9px;
@@ -307,14 +308,14 @@ h1 {
   margin-left: 15.55px;
   margin-top: 13.56px;
 }
-.eye {
-  border-top: 1px solid #8f8f8f;
-  border-bottom: 1px solid #8f8f8f;
-  border-right: 1px solid #8f8f8f;
-  border-radius: 0px 8px 8px 0px;
-}
-.eyeSVG {
-  margin-top: 15px;
+
+.seePass {
+  position: absolute;
+  margin-top: 19px;
   margin-right: 14px;
-  color: #d1d1d1;
+  background-image: url(showpass.svg);
+  background-color: #303030;
+  border: 0px;
+  width: 20px;
+  height: 14px;
 }
