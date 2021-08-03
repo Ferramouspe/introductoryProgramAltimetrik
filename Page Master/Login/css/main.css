@@ -61,7 +61,7 @@ h1 {
   box-sizing: border-box;
   border-radius: 8px 0px 0px 8px;
 }
-.form-control-pass {
+.inputPass {
   background-color: #303030;
   width: 278px;
   height: 52px;
@@ -73,10 +73,11 @@ h1 {
   padding-left: 15px;
   font-family: Open Sans;
   font-size: 14px;
+  color: #8f8f8f;
   line-height: 19px;
   outline: none;
 }
-.form-control-user {
+.inputUser {
   background-color: #303030;
   width: 278px;
   height: 52px;
@@ -87,6 +88,7 @@ h1 {
   box-sizing: border-box;
   padding-left: 15px;
   font-family: Open Sans;
+  color: #8f8f8f;
   font-size: 14px;
   line-height: 19px;
   outline: none;
@@ -164,6 +166,7 @@ h1 {
   font-weight: normal;
   font-size: 14px;
   line-height: 19px;
+  text-decoration: none;
   color: #ffffff;
 }
 .forgotPassword {
@@ -178,6 +181,7 @@ h1 {
   font-size: 14px;
   line-height: 19px;
   text-align: right;
+  text-decoration: none;
   color: #ffffff;
 }
 .form-container {
