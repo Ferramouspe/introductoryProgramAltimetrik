@@ -1,0 +1,149 @@
+body {
+  background-color: #000000;
+}
+header {
+  height: 120px;
+  background: linear-gradient(180deg, #7cd235 0%, #2bb34f 100%);
+  box-shadow: 1px -3px 36px rgba(0, 0, 0, 0.5);
+}
+.subHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+h1 {
+  margin-left: 39px;
+  width: 198px;
+  height: 38px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 38px;
+  letter-spacing: 1.74222px;
+  color: #ffffff;
+}
+.pageTitle {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.search {
+  display: flex;
+  align-items: center;
+}
+.searchBar {
+  height: 40px;
+  width: 322px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  text-indent: 20px;
+  line-height: 22px;
+  border: 0px;
+  color: #a6a6a6;
+  background: #f1f1f1;
+  border-radius: 0px 20px 20px 0px;
+  outline: none;
+}
+.searchSVG {
+  margin-top: 13px;
+  margin-left: 20px;
+  width: 16px;
+  height: 16px;
+  color: #a6a6a6;
+}
+.pt-32 {
+  padding-top: 32px;
+}
+.imageForSearchBar {
+  height: 42px;
+  width: 40px;
+  background: #f1f1f1;
+  border-radius: 20px 0px 0px 20px;
+}
+.logoutSVG {
+  width: 16px;
+  height: 12px;
+  margin-right: 32.32px;
+  color: #ffffff;
+}
+.pt-44 {
+  padding-top: 44px;
+}
+.logout {
+  text-decoration: none;
+  margin-right: 11px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  color: #ffffff;
+}
+.profileImage {
+  width: 43.87px;
+  height: 45.33px;
+  background-image: url(profileImage.jpg);
+  background-size: 46px;
+  border-radius: 100px;
+}
+.logoutAndProfile {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 38px;
+}
+.line {
+  width: 95%;
+  position: relative;
+  border: 1px solid #ffffff;
+  background: #ffffff;
+}
+.forLine {
+  display: flex;
+  justify-content: center;
+}
+nav {
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+  padding-left: 40px;
+  background-color: #000000;
+}
+.home,
+.reviews,
+.newRelases,
+.popular {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 30px;
+  color: #ffffff;
+  text-decoration: none;
+}
+.thisWeek,
+.thisMonth,
+.commingSoon,
+.lastSearches,
+.bestOfTheYear {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 30px;
+  color: #ffffff;
+  text-decoration: none;
+}
+.pt-33 {
+  padding-top: 33px;
+}
+.pt-11 {
+  padding-top: 11px;
+}
+.pr-14 {
+  padding-right: 14px;
+}
