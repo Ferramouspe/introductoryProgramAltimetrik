@@ -1,7 +1,7 @@
 body {
   background: #000000;
 }
-.bg-box {
+.bgBox {
   display: inline;
   float: left;
   background-color: #303030;
@@ -42,7 +42,7 @@ h1 {
   margin-top: 180px;
   padding: 0px;
 }
-.bi-person-circle {
+.profileSVG {
   background-color: #303030;
   margin: 15px;
   width: 20px;
@@ -53,7 +53,7 @@ h1 {
   display: flex;
   justify-content: flex-end;
 }
-.input-group-text {
+.SVGBox {
   background-color: #303030;
   width: 52px;
   height: 52px;
@@ -100,7 +100,7 @@ h1 {
   margin-left: 16px;
 }
 
-.btn-primary {
+.loginButton {
   width: 100px;
   height: 40px;
   background: linear-gradient(180deg, #7cd235 0%, #2bb34f 100%);
@@ -113,7 +113,7 @@ h1 {
   text-align: center;
   color: #ffffff;
 }
-.form-check-input {
+.checkboxInput {
   background-color: #303030;
   left: 22.92%;
   right: 75.69%;
@@ -123,7 +123,7 @@ h1 {
   box-sizing: border-box;
   border-radius: 4px;
 }
-.form-check-label {
+.checkboxLabel {
   font-family: Open Sans;
   font-style: normal;
   font-weight: normal;
