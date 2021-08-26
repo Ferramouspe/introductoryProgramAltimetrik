@@ -96,8 +96,14 @@ h1 {
   justify-content: flex-end;
   margin-right: 38px;
 }
+.pl-39 {
+  padding-left: 39px;
+}
+.pr-38 {
+  padding-right: 38px;
+}
 .line {
-  width: 95%;
+  width: 100%;
   position: relative;
   border: 1px solid #ffffff;
   background: #ffffff;
@@ -125,6 +131,15 @@ nav {
   color: #ffffff;
   text-decoration: none;
 }
+.home:hover,
+.reviews:hover,
+.newRelases:hover,
+.popular:hover {
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 30px;
+  color: #7cd235;
+}
 .thisWeek,
 .thisMonth,
 .commingSoon,
@@ -138,6 +153,15 @@ nav {
   color: #ffffff;
   text-decoration: none;
 }
+.thisWeek:hover,
+.thisMonth:hover,
+.commingSoon:hover,
+.lastSearches:hover,
+.bestOfTheYear:hover {
+  font-size: 22px;
+  line-height: 30px;
+  color: #7cd235;
+}
 .pt-33 {
   padding-top: 33px;
 }
@@ -146,4 +170,13 @@ nav {
 }
 .pr-14 {
   padding-right: 14px;
+}
+.subMenuDiv {
+  color: #ffffff;
+}
+.subMenuDiv:hover #a {
+  color: #7cd235;
+}
+.subMenuDiv:hover {
+  color: #7cd235;
 }
