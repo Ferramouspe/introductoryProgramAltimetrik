@@ -1,4 +1,5 @@
 body {
+  margin: 0px;
   background-color: #000000;
 }
 header {
@@ -112,6 +113,10 @@ h1 {
   display: flex;
   justify-content: center;
 }
+.mainBody {
+  display: flex;
+  justify-content: space-between;
+}
 nav {
   display: flex;
   flex-direction: column;
@@ -168,8 +173,14 @@ nav {
 .pt-11 {
   padding-top: 11px;
 }
+.pt-24 {
+  padding-top: 24px;
+}
 .pr-14 {
   padding-right: 14px;
+}
+.pl-24 {
+  padding-left: 24px;
 }
 .subMenuDiv {
   color: #ffffff;
@@ -179,4 +190,41 @@ nav {
 }
 .subMenuDiv:hover {
   color: #7cd235;
+}
+.newAndTrending {
+  margin: 0px;
+  height: 75px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 55px;
+  line-height: 75px;
+  color: #ffffff;
+}
+.basedOn {
+  margin: 0px;
+  height: 25px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  color: #ffffff;
+}
+.columns {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 51px;
+  padding-right: 40px;
+}
+.provisorio {
+  display: flex;
+}
+.columns3SVG {
+  background-color: #515151;
+  border-radius: 10px;
+}
+.column1SVG {
+  background-color: #303030;
+  border-radius: 10px;
 }
