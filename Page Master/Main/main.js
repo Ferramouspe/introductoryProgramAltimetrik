@@ -1,6 +1,6 @@
 const urlAPI = "https://api.rawg.io/api/games?key=c692385ef58c4bc98d34e178c3e7c2ff&dates=2019-09-01,2019-09-30&platforms=18,1,7";
 
-forFetch();
+//forFetch();
 
 function changeImage(image){
     const imageForCard = document.getElementById("cardImageId");
@@ -13,11 +13,6 @@ function forFetch(){
         changeImage(games.results[0].background_image)
     })
 }
-
-
-
-
-
 
 
 
