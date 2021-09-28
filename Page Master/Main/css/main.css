@@ -1,3 +1,6 @@
+html {
+  height: 100%;
+}
 body {
   margin: 0px;
   background-color: #000000;
@@ -220,11 +223,117 @@ nav {
 .provisorio {
   display: flex;
 }
-.columns3SVG {
+#columns3Id {
   background-color: #515151;
   border-radius: 10px;
 }
-.column1SVG {
+#columns3Id:hover {
+  background-color: #7d7d7d !important;
+  border-radius: 10px;
+}
+#column1Id {
   background-color: #303030;
   border-radius: 10px;
+}
+#column1Id:hover {
+  background-color: #7d7d7d !important;
+  border-radius: 10px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+}
+.cardImage,
+#cardImageId {
+  width: 363px;
+  height: 204.25px;
+  border-radius: 10px 10px 0px 0px;
+}
+.underCardImage {
+  display: flex;
+  justify-content: space-between;
+  width: 363px;
+  height: 109.75px;
+  background-color: #303030;
+  border-radius: 0px 0px 10px 10px;
+}
+.leftPartCard {
+  display: flex;
+  flex-direction: column;
+  margin-top: 9.75px;
+  margin-left: 20px;
+}
+.rightPartCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 20.75px;
+  margin-right: 20.03px;
+}
+.consols {
+  width: 59.97px;
+  height: 13px;
+}
+#gameName {
+  margin: 0%;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 23px;
+  line-height: 31px;
+  color: #ffffff;
+}
+#gameNumber {
+  margin: 0%;
+  margin-top: 7.08px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+  color: #2bb34f;
+}
+.forGift {
+  margin-top: 6px;
+  width: 47px;
+  height: 24px;
+  background: linear-gradient(180deg, #7cd235 0%, #2bb34f 100%);
+  border-radius: 10px;
+}
+.plus {
+  margin-left: 10px;
+  margin-bottom: 3px;
+}
+.gift {
+  margin-right: 10px;
+  margin-top: 3px;
+}
+.releaseDateDiv {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3px;
+}
+.releaseDate,
+#releaseDateId,
+.genre,
+#genreId {
+  margin: 0%;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 16px;
+  color: #939393;
+}
+.cardLine {
+  margin: 0%;
+  width: 186px;
+  height: 1px;
+  background: #3d3d3d;
+  border: 0px solid #3d3d3d;
+}
+.genreDiv {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6.5px;
 }
