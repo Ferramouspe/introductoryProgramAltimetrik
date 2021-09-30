@@ -1,0 +1,216 @@
+.modal {
+  background: linear-gradient(
+    180deg,
+    rgba(48, 48, 48, 0.0001) 0%,
+    #303030 84.4%
+  );
+  /* background-image: url("css/DyingLightImage.png"); */
+  background-blend-mode: normal;
+  opacity: 0.57;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  width: 1080px;
+  height: 794px;
+}
+.topPart {
+  display: flex;
+  justify-content: space-between;
+}
+.cross {
+  margin: 20px;
+}
+.modalConsols {
+  margin-top: 34px;
+}
+.modalName {
+  margin: 0px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 60px;
+  line-height: 82px;
+  color: #ffffff;
+}
+.ml-79 {
+  margin-left: 79px;
+}
+.h-27 {
+  height: 27px;
+}
+.mr-20 {
+  margin-right: 20px;
+}
+.mt-20 {
+  margin-top: 20px;
+}
+.ml-51 {
+  margin-left: 51px;
+}
+.modalContent {
+  display: flex;
+}
+.leftPart {
+  display: flex;
+  flex-direction: column;
+}
+.ratings {
+  margin-top: 44px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.modalDate,
+.modalTop,
+.modalGlobalTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+}
+.gameDate,
+.topNumberLetters,
+.topGlobalNumberLetters {
+  margin: 0px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: right;
+  color: #303030;
+}
+.topNumber,
+.topGlobalNumber {
+  margin: 0px;
+  margin-right: 7px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 27px;
+  color: #2bb34f;
+}
+.firstModalButtons {
+  margin-top: 34px;
+  display: flex;
+  flex-direction: row;
+}
+.whereBuyDiv {
+  width: 125px;
+  height: 50px;
+  margin-right: 20px;
+  border: 1px solid #979797;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.wishListDiv {
+  width: 151px;
+  height: 50px;
+  background: linear-gradient(180deg, #7cd235 0%, #2bb34f 100%);
+  border-radius: 10px;
+}
+.modalDescriptionDiv {
+  display: flex;
+  margin-top: 32px;
+  width: 468px;
+  height: 90px;
+}
+.modalDescription {
+  margin: 0px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  color: #ffffff;
+}
+.modalDescription::selection {
+  background: #7cd235;
+}
+.secondModalButtons {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: row;
+}
+.commentDiv,
+.reviewDiv {
+  margin-right: 24px;
+  width: 141px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #515151;
+  border-radius: 10px;
+}
+.leftComment,
+.review {
+  margin: 0px;
+  margin-left: 11px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: right;
+  color: #ffffff;
+}
+.leftCommentSVG {
+  margin-right: 13.07px;
+}
+.plus {
+  margin: 0px;
+  margin-right: 14px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 33px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+.modalDescription {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: row;
+}
+.plattformsText,
+.modalReleaseText,
+.publisherText,
+.websiteText,
+.modalGenreText,
+.developerText,
+.ageRatingText {
+  margin: 0px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 16px;
+  color: #939393;
+}
+.plattforms,
+.modalRelease,
+.publisher,
+.website,
+.modalGenre,
+.developer,
+.ageRating {
+  margin: 0px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 16px;
+  text-decoration-line: underline;
+  color: #ffffff;
+}
+.modalRelease,
+.ageRating {
+  text-decoration: none;
+}

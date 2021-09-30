@@ -10,18 +10,30 @@ function forFetch(){
     })
 }
 
+function showGenres(gamesInfo){
+    let genre = gamesInfo.genres;
+    let genreActual = "";
+    for (let j=0; j<genre.length; j++) {
+        genreActual += genre[j].name;
+        if(j != genre.length-1 ){
+            genreActual += ',';
+        }
+    }
+    return genreActual;
+}
+
 function repeatCards(gamesInfo) {
     let cardContainer = document.querySelector(".cardContainer");
 
     for(let i=0; i<gamesInfo.results.length; i++){
         let cardInfo = gamesInfo.results[i];
-        let card = `  <div class="card">
+        let card = `  <div class="card cardFlex">
         <div class="cardImage">
             <image id="cardImageId" src='${cardInfo.background_image}'>
         </div>
         <div class="underCardImage">
             <div class="leftPartCard">
-                <div>
+                <div class="forName">
                     <h3 id="gameName">${cardInfo.name}</h3>
                 </div>
                 <div class="releaseDateDiv">
@@ -38,7 +50,7 @@ function repeatCards(gamesInfo) {
                         <h4 class="genre">Genre</h4>
                     </div>
                     <div>
-                        <h4 id="genreId">Action,RPG,Adventure</h4>
+                        <h4 id="genreId">${showGenres(cardInfo)}</h4>
                     </div>
                 </div>
                 <hr class="cardLine">
@@ -55,7 +67,7 @@ function repeatCards(gamesInfo) {
                     </svg>
                 </div>
                 <div class="numberOfGame">
-                    <h2 id="gameNumber">#2</h2>
+                    <h2 id="gameNumber">#${i+1}</h2>
                 </div>
                 <div class="forGift">
                     <svg class="plus" width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -77,13 +89,21 @@ function repeatCards(gamesInfo) {
 function switch3to1() {
         let enabled = "#515151";
         let disabled = "#303030";
-        let columns3 = document.getElementById("columns3Id").style.backgroundColor = enabled;
-        let column1 = document.getElementById("column1Id").style.backgroundColor = disabled;
+        let card = document.querySelector(".card");
+        let container = document.querySelector(".cardContainer");
+        let columns3 = document.getElementById("columns3Id").style.backgroundColor = disabled;
+        let column1 = document.getElementById("column1Id").style.backgroundColor = enabled;
+        card.classList.add("cardFlex");
+        container.classList.remove("cardGrid");
 }
 
 function switch1to3() {
     let enabled = "#515151";
     let disabled = "#303030";
-    let columns3 = document.getElementById("columns3Id").style.backgroundColor = disabled;
-    let column1 = document.getElementById("column1Id").style.backgroundColor = enabled;
+    let card = document.querySelector(".card");
+    let container = document.querySelector(".cardContainer");
+    let columns3 = document.getElementById("columns3Id").style.backgroundColor = enabled;
+    let column1 = document.getElementById("column1Id").style.backgroundColor = disabled;
+    card.classList.remove("cardFlex");
+    container.classList.add("cardGrid");
 }
