@@ -27,7 +27,7 @@ function repeatCards(gamesInfo) {
 
     for(let i=0; i<gamesInfo.results.length; i++){
         let cardInfo = gamesInfo.results[i];
-        let card = `  <div class="card cardFlex">
+        let card = `  <div class="card cardFlex" onclick="cardModal(${cardInfo.id})">
         <div class="cardImage">
             <image id="cardImageId" src='${cardInfo.background_image}'>
         </div>
@@ -106,4 +106,14 @@ function switch1to3() {
     let column1 = document.getElementById("column1Id").style.backgroundColor = disabled;
     card.classList.remove("cardFlex");
     container.classList.add("cardGrid");
+}
+
+
+function cardModal(id){
+        let modal = document.querySelector(".shadow");
+        modal.style.display = "flex";
+}
+function cardModalNone(){
+    let modal = document.querySelector(".shadow");
+    modal.style.display = "none";
 }
