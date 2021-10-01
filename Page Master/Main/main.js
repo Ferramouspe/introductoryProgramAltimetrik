@@ -22,12 +22,24 @@ function showGenres(gamesInfo){
     return genreActual;
 }
 
+function showPlattforms(gamesInfo){
+    let plattforms = gamesInfo.parent_platforms;
+    let plattformActual = "";
+    for (let j=0; j<plattforms.length; j++) {
+        plattformActual += plattforms[j].platform.name;
+        if(j != plattforms.length-1 ){
+            plattformActual += ',';
+        }
+    }
+    return plattformActual;
+}
+
 function repeatCards(gamesInfo) {
     let cardContainer = document.querySelector(".cardContainer");
 
     for(let i=0; i<gamesInfo.results.length; i++){
         let cardInfo = gamesInfo.results[i];
-        let card = `  <div class="card cardFlex" onclick="cardModal(${cardInfo.id})">
+        let card = `<div class="card cardFlex" onclick="cardModal(${cardInfo.id})">
         <div class="cardImage">
             <image id="cardImageId" src='${cardInfo.background_image}'>
         </div>
@@ -80,7 +92,7 @@ function repeatCards(gamesInfo) {
             </div>  
         </div>
     </div>`
-        cardContainer.innerHTML += card;
+    cardContainer.innerHTML += card;
     }
 }
 
@@ -109,11 +121,63 @@ function switch1to3() {
 }
 
 
-function cardModal(id){
-        let modal = document.querySelector(".shadow");
+async function cardModal(id){
+        let shadow = document.querySelector(".shadow");
+        let modal = document.querySelector(".modal");
         modal.style.display = "flex";
+        shadow.style.display = "flex";
+
+        let modalImage;
+        let modalName;
+        let modalGenre;
+        let modalReleaseDate;
+        let modalPlattforms;
+        let allCards = document.querySelectorAll(".card");
+        for(let j=0; j<allCards.length; j++){
+            if(allCards[j].getAttribute("onclick") === `cardModal(${id})`){
+                modalImage = allCards[j].querySelector("#cardImageId").currentSrc;
+                modalName = allCards[j].querySelector("#gameName").textContent;
+                modalGenre = allCards[j].querySelector("#genreId").textContent;
+                modalReleaseDate = allCards[j].querySelector("#releaseDateId").textContent;
+            }
+        }
+        document.querySelector(".backImage").setAttribute("src", `${modalImage}`);
+        document.querySelector(".modalName").textContent = modalName;
+        document.querySelector(".modalGenre").textContent = modalGenre;
+        document.querySelector(".gameDate").textContent = modalReleaseDate;
+        document.querySelector(".modalRelease").textContent = modalReleaseDate;
+
+        const newApiInfo = await getNewApi(id);
+        console.log(newApiInfo);
+
+        let modalDescription = newApiInfo.description;
+
+        document.querySelector(".modalDescription").innerHTML = modalDescription;
+
+        const newApiInfoImages = await screenshotsApi(newApiInfo.slug);
 }
+
+async function getNewApi(id){
+    const fetchInfo = await fetch(`https://api.rawg.io/api/games/${id}?key=c692385ef58c4bc98d34e178c3e7c2ff&dates=2019-09-01,2019-09-30&platforms=18,1,7`);
+    const fetchInfoJson = await fetchInfo.json();
+    return fetchInfoJson;
+}
+
+async function screenshotsApi(slug){
+    const fetchSlug = await fetch(`https://api.rawg.io/api/games/${slug}/screenshots?key=c692385ef58c4bc98d34e178c3e7c2ff`);
+    const fetchSlugJson = await fetchSlug.json();
+    
+    let modalImages = document.querySelectorAll(".modalImage");
+    let imagesForModal = fetchSlugJson.results;
+
+    for(let i=0; i<modalImages.length; i++){
+         modalImages[i].setAttribute("src", `${imagesForModal[i].image}`);
+    }
+}
+
 function cardModalNone(){
-    let modal = document.querySelector(".shadow");
+    let shadow = document.querySelector(".shadow");
+    let modal = document.querySelector(".modal");
     modal.style.display = "none";
+    shadow.style.display = "none";
 }
