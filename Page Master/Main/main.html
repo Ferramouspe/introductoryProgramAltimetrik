@@ -12,12 +12,12 @@
                 <h1 class="gameFinder">GAME<strong>FINDER</strong></h1>
             </div>
             <div class="search">
-                <div class="imageForSearchBar">
+                <div class="imageForSearchBar" onclick="searchGames()">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="searchSVG" viewBox="0 0 16 16">
                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                     </svg>
                 </div>
-                <input type="text" class="searchBar" id="searchBarID" placeholder="Type game name">
+                <input type="text" class="searchBar" id="searchBarId" placeholder="Type game name">
             </div>
             <div class="logoutAndProfile">
                 <a href="../Login/index.html" class="logout">Logout</a>
@@ -73,7 +73,7 @@
             <div class="secondHeader">
                 <div class="subtitle">
                     <h2 class="newAndTrending pt-24">New and trending</h2>
-                    <h3 class="basedOn">Based on player counts and relase date</h3>
+                    <h3 class="basedOn" id="basedOnId">Based on player counts and relase date</h3>
                     </div>
                 <div class="columns">
                     <div class="3columns">

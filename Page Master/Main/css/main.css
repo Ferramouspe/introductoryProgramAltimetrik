@@ -12,9 +12,15 @@ header {
 }
 h2,
 h3,
-h4{
-  overflow: hidden;
-  text-overflow: ellipsis;
+h4 {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+@media screen {
+	html,
+	body {
+		zoom: 90%;
+	}
 }
 .subHeader {
 	display: flex;
@@ -317,10 +323,10 @@ nav {
 	justify-content: flex-end;
 	align-items: center;
 }
-.svgCard{
+.svgCard {
 	margin-right: 3px;
 }
-.svgModal{
+.svgModal {
 	margin-right: 5px;
 }
 #gameName {
@@ -672,10 +678,10 @@ nav {
 	display: flex;
 	flex-direction: row;
 }
-.modalGameName{
-  height: 85px;
-  width: 912px;
-  overflow: hidden;
+.modalGameName {
+	height: 85px;
+	width: 912px;
+	overflow: hidden;
 }
 .plattformsText,
 .modalReleaseText,
@@ -750,7 +756,7 @@ nav {
 }
 
 @media screen and (max-width: 768px) {
-	.nav{
+	.nav {
 		display: none;
 	}
 }
