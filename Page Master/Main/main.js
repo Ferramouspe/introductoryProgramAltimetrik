@@ -27,6 +27,9 @@ function showGenres(gamesInfo){
 function showPlattforms(gamesInfo){
     let plattforms = gamesInfo.parent_platforms;
     let plattformActual = "";
+    if(!plattforms){
+        return "Not Especified"
+    }
     for (let j=0; j<plattforms.length; j++) {
         plattformActual += plattforms[j].platform.name;
         if(j != plattforms.length-1 ){
@@ -63,7 +66,7 @@ function repeatCards(gamesInfo) {
                     <div>
                         <h4 class="genre">Genre</h4>
                     </div>
-                    <div>
+                    <div class="forEllipsis">
                         <h4 id="genreId">${showGenres(cardInfo)}</h4>
                     </div>
                 </div>
@@ -131,7 +134,7 @@ async function infinitScroll(pageScroll){
                     <div>
                         <h4 class="genre">Genre</h4>
                     </div>
-                    <div>
+                    <div class="forEllipsis">
                         <h4 id="genreId">${showGenres(cardInfo)}</h4>
                     </div>
                 </div>
@@ -361,7 +364,6 @@ async function cardModal(id){
         let modalName;
         let modalGenre;
         let modalReleaseDate;
-        let modalPlattforms;
         let allCards = document.querySelectorAll(".card");
         for(let j=0; j<allCards.length; j++){
             if(allCards[j].getAttribute("onclick") === `cardModal(${id})`){
@@ -382,9 +384,8 @@ async function cardModal(id){
         document.querySelector(".developer").textContent = modalDevelopers(newApiInfo);
         document.querySelector(".publisher").textContent = modalPublishers(newApiInfo);
         document.querySelector(".website").textContent = modalWebsite(newApiInfo.website);
-
         document.querySelector(".modalConsols").innerHTML = modalConsols(newApiInfo);
-
+        document.querySelector(".plattforms").textContent = showPlattforms(newApiInfo);
         document.querySelector(".modalDescriptionText").textContent = newApiInfo.description_raw;
         document.querySelector(".ageRating").textContent = modalAgeRating(newApiInfo);
         document.querySelector(".topNumber").textContent = "#" + newApiInfo.rating_top;
@@ -642,13 +643,12 @@ function searchGames(){
 }
     
 async function searched(text){    
-    let fetchSearch = await fetch(`${urlAPI}&search=${text}`);
+    let fetchSearch = await fetch(`https://api.rawg.io/api/games?key=c692385ef58c4bc98d34e178c3e7c2ff&search=${text}`);
     let fetchSearchJson = await fetchSearch.json();
 
     document.querySelector(".newAndTrending").textContent = "Search Result";
     document.getElementById("basedOnId").textContent = `${text} results`;
-    let cardContainer = document.querySelector(".cardGrid").innerHTML;
-    cardContainer = "";
+    document.querySelector(".cardContainer").innerHTML = "";
 
     for(let i=0; i<fetchSearchJson.results.length; i++){
         let fetch = fetchSearchJson.results[i];
@@ -674,7 +674,7 @@ async function searched(text){
                     <div>
                         <h4 class="genre">Genre</h4>
                     </div>
-                    <div>
+                    <div class="forEllipsis">
                         <h4 id="genreId">${showGenres(fetch)}</h4>
                     </div>
                 </div>
@@ -698,6 +698,7 @@ async function searched(text){
             </div>  
         </div>
     </div>`;
-    cardContainer += searchedCard;
+    document.querySelector(".cardContainer").innerHTML += searchedCard;
     }
+    loading = true;
 }
