@@ -1,6 +1,8 @@
 const urlAPI = "https://api.rawg.io/api/games?key=c692385ef58c4bc98d34e178c3e7c2ff&dates=2019-09-01,2019-09-30&platforms=18,1,7";
 var page;
 var cont = 0;
+let loading = false;
+var searchArray = [];
 
 forFetch();
 
@@ -46,7 +48,7 @@ function repeatCards(gamesInfo) {
         let cardInfo = gamesInfo.results[i];
         let card = `<div class="card cardFlex" onclick="cardModal(${cardInfo.id})">
         <div class="cardImage">
-            <image id="cardImageId" src='${cardInfo.background_image}'>
+            <image id="cardImageId" src='${backgroundImage(cardInfo.background_image)}'>
         </div>
         <div class="underCardImage">
             <div class="leftPartCard">
@@ -94,8 +96,6 @@ function repeatCards(gamesInfo) {
     }
 }
 
-let loading = false;
-
 window.addEventListener("scroll", ()=>{
     if(window.scrollY + window.innerHeight >= document.documentElement.scrollHeight-1000 && !loading){
         if(!page) return;
@@ -114,7 +114,7 @@ async function infinitScroll(pageScroll){
         let cardInfo = fetchData.results[i];
         let card = `<div class="card cardFlex" onclick="cardModal(${cardInfo.id})">
         <div class="cardImage">
-            <image id="cardImageId" src='${backgroundImage(cardInfo.background_image)}'>
+            <image id="cardImageId" src='${backgroundCardImage(cardInfo.background_image)}'>
         </div>
         <div class="underCardImage">
             <div class="leftPartCard">
@@ -618,6 +618,7 @@ async function screenshotsApi(slug){
     
     let modalImages = document.querySelectorAll(".modalImage");
     let imagesForModal = fetchSlugJson.results;
+    console.log(imagesForModal);
 
     if(imagesForModal.length == 0){
         for(let i=0; i<modalImages.length; i++){
@@ -626,7 +627,12 @@ async function screenshotsApi(slug){
         return;
     }
     for(let i=0; i<modalImages.length; i++){
-        modalImages[i].setAttribute("src", `${imagesForModal[i].image}`);
+        console.log(imagesForModal);
+        if(imagesForModal[i] == undefined){
+            modalImages[i].setAttribute("src", "CSS/NoImageAvailable.jpg");
+        }else{
+            modalImages[i].setAttribute("src", `${backgroundImage(imagesForModal[i].image)}`);
+        }
     }
 }
 
@@ -640,6 +646,8 @@ function cardModalNone(){
 function searchGames(){
     let searchInput = document.getElementById("searchBarId").value;
     searched(searchInput);
+    searchArray += searchInput;
+    console.log(searchArray);
 }
     
 async function searched(text){    
@@ -654,7 +662,7 @@ async function searched(text){
         let fetch = fetchSearchJson.results[i];
         let searchedCard = `<div class="card cardFlex" onclick="cardModal(${fetch.id})">
         <div class="cardImage">
-            <image id="cardImageId" src='${fetch.background_image}'>
+            <image id="cardImageId" src='${backgroundImage(fetch.background_image)}'>
         </div>
         <div class="underCardImage">
             <div class="leftPartCard">
@@ -700,5 +708,6 @@ async function searched(text){
     </div>`;
     document.querySelector(".cardContainer").innerHTML += searchedCard;
     }
+    searchArray[searchArray.length] = text;
     loading = true;
 }

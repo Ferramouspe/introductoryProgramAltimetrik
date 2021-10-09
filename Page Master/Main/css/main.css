@@ -456,6 +456,7 @@ nav {
 }
 .modal {
 	z-index: 2;
+	zoom: 85%;
 	overflow: hidden;
 	position: fixed;
 	background-blend-mode: normal;
