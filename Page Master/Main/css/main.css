@@ -26,7 +26,8 @@ h4 {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	padding-top: 10px;
+	align-items: center;
+	padding-top: 32px;
 }
 h1 {
 	margin-left: 39px;
@@ -44,13 +45,14 @@ h1 {
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
+	margin-left: 40px;
 }
 .search {
 	display: flex;
 	align-items: center;
 }
 .searchBar {
-	height: 40px;
+	height: 41px;
 	width: 322px;
 	font-family: Open Sans;
 	font-style: normal;
@@ -75,12 +77,13 @@ h1 {
 	padding-top: 32px;
 }
 .imageForSearchBar {
-	height: 42px;
+	height: 43px;
 	width: 40px;
 	background: #f1f1f1;
 	border-radius: 20px 0px 0px 20px;
 }
-.logoutSVG {
+.logoutSVG,
+.logoutSVGNav {
 	width: 16px;
 	height: 12px;
 	margin-right: 32.32px;
@@ -89,7 +92,8 @@ h1 {
 .pt-44 {
 	padding-top: 44px;
 }
-.logout {
+.logout,
+.logoutNav {
 	text-decoration: none;
 	margin-right: 11px;
 	font-family: Open Sans;
@@ -110,16 +114,22 @@ h1 {
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
-	margin-right: 38px;
+	margin-right: 40px;
 }
-.pl-39 {
-	padding-left: 39px;
+.logoutAndProfileNav {
+	margin-bottom: 20px;
+	align-items: center;
+	display: none;
 }
-.pr-38 {
-	padding-right: 38px;
+.pl-40 {
+	padding-left: 40px;
+}
+.pr-40 {
+	padding-right: 40px;
 }
 .line {
 	width: 100%;
+	margin: 0px;
 	position: relative;
 	border: 1px solid #ffffff;
 	background: #ffffff;
@@ -127,6 +137,7 @@ h1 {
 .forLine {
 	display: flex;
 	justify-content: center;
+	margin-top: 18px;
 }
 .mainBody {
 	display: flex;
@@ -146,12 +157,21 @@ h1 {
 .cardContainer {
 	margin-top: 30px;
 }
-nav {
+.subNavTop {
 	display: flex;
 	flex-direction: column;
 	width: 260px;
 	padding-left: 40px;
 	background-color: #000000;
+}
+.subNavBottom {
+	padding-left: 40px;
+}
+nav {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	height: 100vh;
 }
 .home {
 	font-family: Open Sans;
@@ -286,7 +306,11 @@ nav {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(363px, 1fr));
 }
-.cardImage,
+.cardImage {
+	width: 363px;
+	height: 204.25px;
+	border-radius: 10px 10px 0px 0px;
+}
 #cardImageId {
 	width: 363px;
 	height: 204.25px;
@@ -329,6 +353,15 @@ nav {
 .svgModal {
 	margin-right: 5px;
 }
+.gameFinder {
+	margin: 0px;
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 28px;
+	line-height: 38px;
+	letter-spacing: 1.74222px;
+}
 #gameName {
 	margin: 0%;
 	overflow: hidden;
@@ -345,7 +378,7 @@ nav {
 	width: 220px;
 	height: 31px;
 	overflow: hidden;
-    white-space: nowrap;
+	white-space: nowrap;
 }
 #gameNumber {
 	margin: 0%;
@@ -412,9 +445,9 @@ nav {
 	margin-top: 6.5px;
 }
 
-.forEllipsis{
+.forEllipsis {
 	overflow: hidden;
-    white-space: nowrap;
+	white-space: nowrap;
 }
 
 /* MODAL CSS */
@@ -432,10 +465,10 @@ nav {
 	top: 50%;
 	left: 50%;
 }
-.leftDescription{
+.leftDescription {
 	width: 234px;
 }
-.rightDescription{
+.rightDescription {
 	width: 234px;
 }
 .backImage {
@@ -507,6 +540,8 @@ nav {
 }
 .modalContent {
 	display: flex;
+	justify-content: center;
+	margin-right: 20px;
 }
 .leftPart {
 	display: flex;
@@ -526,10 +561,15 @@ nav {
 	align-items: center;
 	background: #ffffff;
 }
+.gameDate {
+	margin-left: 15px;
+}
 .gameDate,
 .topNumberLetters,
 .topGlobalNumberLetters {
-	margin: 0px;
+	margin-right: 15px;
+	margin-top: 3px;
+	margin-bottom: 3px;
 	font-family: Open Sans;
 	font-style: normal;
 	font-weight: normal;
@@ -542,6 +582,7 @@ nav {
 .topGlobalNumber {
 	margin: 0px;
 	margin-right: 7px;
+	margin-left: 15px;
 	font-family: Open Sans;
 	font-style: normal;
 	font-weight: 800;
@@ -759,19 +800,33 @@ nav {
 	width: 100%;
 	height: 100%;
 }
+.menuNav {
+	display: none;
+	margin-left: 40px;
+}
 @media screen and (max-width: 1080px) {
 	.modal {
 		width: 100%;
 		height: 100%;
 		border-radius: 0px;
 	}
-	.backImage {
-		width: 1080px;
-	}
 }
 
 @media screen and (max-width: 768px) {
-	.nav {
+	.newAndTrending,
+	.basedOn {
+		margin-left: 40px;
+	}
+	.logout,
+	.logoutSVG,
+	.pageTitle,
+	nav {
 		display: none;
+	}
+	.menuNav {
+		display: flex;
+	}
+	.logoutAndProfileNav {
+		display: flex;
 	}
 }

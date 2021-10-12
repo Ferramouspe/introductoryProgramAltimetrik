@@ -114,7 +114,7 @@ async function infinitScroll(pageScroll){
         let cardInfo = fetchData.results[i];
         let card = `<div class="card cardFlex" onclick="cardModal(${cardInfo.id})">
         <div class="cardImage">
-            <image id="cardImageId" src='${backgroundCardImage(cardInfo.background_image)}'>
+            <image id="cardImageId" src='${backgroundImage(cardInfo.background_image)}'>
         </div>
         <div class="underCardImage">
             <div class="leftPartCard">
@@ -335,12 +335,18 @@ function cardConsols(cardInfo){
 function switch3to1() {
         let enabled = "#515151";
         let disabled = "#303030";
+        let cardDescripton = `<div class="cardDescription">`;
         let card = document.querySelector(".card");
         let container = document.querySelector(".cardContainer");
         let columns3 = document.getElementById("columns3Id").style.backgroundColor = disabled;
         let column1 = document.getElementById("column1Id").style.backgroundColor = enabled;
         card.classList.add("cardFlex");
         container.classList.remove("cardGrid");
+        changeCard();
+}
+
+function changeCard(){
+
 }
 
 function switch1to3() {
@@ -710,4 +716,11 @@ async function searched(text){
     }
     searchArray[searchArray.length] = text;
     loading = true;
+}
+function openNav(){
+    let nav = document.querySelector("nav").style;
+    
+    if(nav.display == "none"){
+        nav.display = "flex";
+    }else{nav.display = "none"}
 }
