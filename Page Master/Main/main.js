@@ -346,6 +346,12 @@ function switch3to1() {
 }
 
 function changeCard(){
+    document.querySelector(".cardImage").style.width = "697px";
+    document.querySelector(".cardImage").style.height = "315px";
+    document.querySelector("#cardImageId").style.width = "697px";
+    document.querySelector("#cardImageId").style.height = "315px";
+    document.querySelector(".underCardImage").style.width = "697px";
+    document.querySelector(".underCardImage").style.height = "223px";
 
 }
 
