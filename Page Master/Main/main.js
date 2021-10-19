@@ -6,14 +6,13 @@ var searchArray = [];
 
 infinitScroll(urlAPI);
 
-function cardMaker(info, i){
+function cardMaker(info, i, description){
     let card = 
     `<div class="card cardFlex" onclick="cardModal(${info.id})">
         <div class="cardImage">
-            <image id="cardImageId" src='${backgroundImage(info.background_image)}'>
+            <image class="cardImageImg" src='${backgroundImage(info.background_image)}'>
         </div>
         <div class="underCardImage">
-            
             <div class="topPartCard">
                 <div class="forName">
                     <h3 id="gameName">${info.name}</h3>
@@ -22,7 +21,6 @@ function cardMaker(info, i){
                     ${cardConsols(info)}
                 </div>
             </div>
-
             <div class="middlePartCard">
                 <div class="middleLeftPartCard">
                     <div>   
@@ -48,12 +46,10 @@ function cardMaker(info, i){
                         <hr class="cardLine">
                     </div>
                 </div>
-
                 <div class="middleRightPartCard">
                     <div class="numberOfGame">
                         <h2 id="gameNumber">#${cont+i+1}</h2>
                     </div>
-
                     <div class="forGift">
                         <svg class="plus" width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M2.7832 4.41406H0.515625V3.13086H2.7832V0.845703H4.06641V3.13086H6.33398V4.41406H4.06641V6.66992H2.7832V4.41406Z" fill="white"/>
@@ -64,9 +60,8 @@ function cardMaker(info, i){
                     </div>
                 </div>
             </div>
-            
             <div class="descriptionPartCard"> 
-                <p class="cardDescription">${info.description}</p>
+                <p class="cardDescription">${description}</p>
             </div>
 
         </div>
@@ -117,7 +112,12 @@ async function infinitScroll(pageUrl){
 
     for(let i=0; i<fetchData.results.length; i++){
         let cardInfo = fetchData.results[i];
-        let card = cardMaker(cardInfo, i);
+        let cardInfoId = cardInfo.id;
+
+        const fetchForDescription = await getNewApi(cardInfoId);
+        let description = fetchForDescription.description_raw;
+
+        let card = cardMaker(cardInfo, i, description);
         cardContainer.innerHTML += card;
     }
     page = fetchData.next;
@@ -291,7 +291,7 @@ function cardConsols(cardInfo){
         }
     }
     return consols;
-}
+} 
 
 function switch3to1() {
         let enabled = "#515151";
@@ -303,11 +303,34 @@ function switch3to1() {
         let column1 = document.getElementById("column1Id").style.backgroundColor = enabled;
         card.classList.add("cardFlex");
         container.classList.remove("cardGrid");
-        changeCard();
+        changeCard1();
 }
 
-function changeCard(){
+function changeCard1(){
+    let cards = document.querySelectorAll(".card");
+    let underCardImage = document.querySelectorAll(".underCardImage");
+    let cardImage = document.querySelectorAll(".cardImage");
+    let cardImageImg = document.querySelectorAll(".cardImageImg");
+    let middleRightPartCard = document.querySelectorAll(".middleRightPartCard");
+    let middleLeftPartCard = document.querySelectorAll(".middleLeftPartCard");
+    let descriptionPartCard = document.querySelectorAll(".descriptionPartCard");
+    let genreDiv = document.querySelectorAll(".genreDiv");
+    let forGift = document.querySelectorAll(".forGift");
+    let topPartCard = document.querySelectorAll(".topPartCard");
+    let releaseDateDiv = document.querySelectorAll(".releaseDateDiv");
 
+    for(let i=0; i<cards.length; i++){
+        underCardImage[i].classList.add("underCardImage1");
+        cardImage[i].classList.add("cardImage1");
+        cardImageImg[i].classList.add("cardImageImg1");
+        middleRightPartCard[i].classList.add("middleRightPartCard1");
+        middleLeftPartCard[i].classList.add("middleLeftPartCard1");
+        descriptionPartCard[i].classList.add("descriptionPartCard1");
+        genreDiv[i].classList.add("genreDiv1");
+        forGift[i].classList.add("forGift1");
+        topPartCard[i].classList.add("topPartCard1");
+        releaseDateDiv[i].classList.add("releaseDateDiv1");
+    }
 }
 
 function switch1to3() {
@@ -319,6 +342,34 @@ function switch1to3() {
     let column1 = document.getElementById("column1Id").style.backgroundColor = disabled;
     card.classList.remove("cardFlex");
     container.classList.add("cardGrid");
+    changeCard3();
+}
+
+function changeCard3(){
+    let cards = document.querySelectorAll(".card");
+    let underCardImage = document.querySelectorAll(".underCardImage");
+    let cardImage = document.querySelectorAll(".cardImage");
+    let cardImageImg = document.querySelectorAll(".cardImageImg");
+    let middleRightPartCard = document.querySelectorAll(".middleRightPartCard");
+    let middleLeftPartCard = document.querySelectorAll(".middleLeftPartCard");
+    let descriptionPartCard = document.querySelectorAll(".descriptionPartCard");
+    let genreDiv = document.querySelectorAll(".genreDiv");
+    let forGift = document.querySelectorAll(".forGift");
+    let topPartCard = document.querySelectorAll(".topPartCard");
+    let releaseDateDiv = document.querySelectorAll(".releaseDateDiv");
+
+    for(let i=0; i<cards.length; i++){
+        underCardImage[i].classList.remove("underCardImage1");
+        cardImage[i].classList.remove("cardImage1");
+        cardImageImg[i].classList.remove("cardImageImg1");
+        middleRightPartCard[i].classList.remove("middleRightPartCard1");
+        middleLeftPartCard[i].classList.remove("middleLeftPartCard1");
+        descriptionPartCard[i].classList.remove("descriptionPartCard1");
+        genreDiv[i].classList.remove("genreDiv1");
+        forGift[i].classList.remove("forGift1");
+        topPartCard[i].classList.remove("topPartCard1");
+        releaseDateDiv[i].classList.remove("releaseDateDiv1");
+    }
 }
 
 async function cardModal(id){
@@ -334,7 +385,7 @@ async function cardModal(id){
         let allCards = document.querySelectorAll(".card");
         for(let j=0; j<allCards.length; j++){
             if(allCards[j].getAttribute("onclick") === `cardModal(${id})`){
-                modalImage = allCards[j].querySelector("#cardImageId").currentSrc;
+                modalImage = allCards[j].querySelector(".cardImageImg").currentSrc;
                 modalName = allCards[j].querySelector("#gameName").textContent;
                 modalGenre = modalGenreFunct(allCards[j].querySelector("#genreId").textContent);
                 modalReleaseDate = allCards[j].querySelector("#releaseDateId").textContent;
@@ -585,7 +636,6 @@ async function screenshotsApi(slug){
     
     let modalImages = document.querySelectorAll(".modalImage");
     let imagesForModal = fetchSlugJson.results;
-    console.log(imagesForModal);
 
     if(imagesForModal.length == 0){
         for(let i=0; i<modalImages.length; i++){
@@ -594,7 +644,6 @@ async function screenshotsApi(slug){
         return;
     }
     for(let i=0; i<modalImages.length; i++){
-        console.log(imagesForModal);
         if(imagesForModal[i] == undefined){
             modalImages[i].setAttribute("src", "CSS/NoImageAvailable.jpg");
         }else{
