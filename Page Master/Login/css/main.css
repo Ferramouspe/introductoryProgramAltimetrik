@@ -347,7 +347,6 @@ h1 {
 		padding-top: 0px;
 	}
 }
-
 .carrouselImages {
 	width: 700%;
 	height: 100%;
@@ -359,11 +358,9 @@ h1 {
 	transition: all 1s ease;
 	transform: translateX(0%);
 }
-
 .img {
 	width: calc(100% / 7);
 }
-
 .points {
 	width: 100%;
 	display: flex;
@@ -373,7 +370,6 @@ h1 {
 	position: relative;
     bottom: 60px;
 }
-
 .point {
 	height: 10px;
 	width: 10px;
@@ -382,11 +378,21 @@ h1 {
 	display: flex;
 	align-items: center;
 }
-
 .circleSVG{
 	fill: #303030;
 }
-
 .active{
 	fill: white;
+}
+.googleImage,
+.logGoogle,
+.twitterImage,
+.logTwitter,
+.faceImage,
+.logFace,
+.loginButton,
+.checkboxInput,
+.seePass,
+.circleSVG{
+	cursor: pointer;
 }

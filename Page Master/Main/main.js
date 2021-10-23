@@ -2,11 +2,13 @@ const urlAPI = "https://api.rawg.io/api/games?key=c692385ef58c4bc98d34e178c3e7c2
 var page;
 var cont = 0;
 let loading = false;
+var contColumns = 3;
 var searchArray = [];
+var idArray = [];
 
 infinitScroll(urlAPI);
 
-function cardMaker(info, i, description){
+function cardMaker(info, i){
     let card = 
     `<div class="card cardFlex" onclick="cardModal(${info.id})">
         <div class="cardImage">
@@ -61,7 +63,7 @@ function cardMaker(info, i, description){
                 </div>
             </div>
             <div class="descriptionPartCard"> 
-                <p class="cardDescription">${description}</p>
+                <p class="cardDescription"></p>
             </div>
 
         </div>
@@ -106,23 +108,34 @@ window.addEventListener("scroll", ()=>{
 
 async function infinitScroll(pageUrl){
     loading = true;
+    idArray = [];
     let cardContainer = document.querySelector(".cardContainer");
     let fetchPage = await fetch(pageUrl);
     let fetchData = await fetchPage.json();
 
     for(let i=0; i<fetchData.results.length; i++){
         let cardInfo = fetchData.results[i];
-        let cardInfoId = cardInfo.id;
+        idArray[i] = cardInfo.id;
 
-        const fetchForDescription = await getNewApi(cardInfoId);
-        let description = fetchForDescription.description_raw;
-
-        let card = cardMaker(cardInfo, i, description);
+        let card = cardMaker(cardInfo, i);
         cardContainer.innerHTML += card;
     }
+    if(contColumns == 1){changeCard1()}
+    
+    cardDescription(idArray);
     page = fetchData.next;
     cont += 20;
     loading = false;
+}
+
+async function cardDescription(idArray){
+    let descriptionContainer = document.querySelectorAll(".cardDescription");
+
+    for(let i=0; i<idArray.length; i++){
+        const fetchForDescription = await getNewApi(idArray[i]);
+        let description = fetchForDescription.description_raw;
+        descriptionContainer[i+cont-20].innerHTML += description;
+    }
 }
 
 function backgroundImage(image){
@@ -331,6 +344,7 @@ function changeCard1(){
         topPartCard[i].classList.add("topPartCard1");
         releaseDateDiv[i].classList.add("releaseDateDiv1");
     }
+    contColumns = 1;
 }
 
 function switch1to3() {
@@ -370,6 +384,7 @@ function changeCard3(){
         topPartCard[i].classList.remove("topPartCard1");
         releaseDateDiv[i].classList.remove("releaseDateDiv1");
     }
+    contColumns = 3;
 }
 
 async function cardModal(id){
@@ -727,10 +742,21 @@ async function searched(text){
     searchArray[searchArray.length] = text;
     loading = true;
 }
+
 function openNav(){
     let nav = document.querySelector("nav").style;
+    let shadow = document.querySelector(".secondShadow").style;
     
-    if(nav.display == "none"){
-        nav.display = "flex";
-    }else{nav.display = "none"}
+    nav.left = "0px";
+    nav.transition = "1s ease";
+    shadow.display = "flex";
+}
+
+function closeNav(){
+    let nav = document.querySelector("nav").style;
+    let shadow = document.querySelector(".secondShadow").style;
+
+    nav.left = "-500px";
+    nav.transition = "1s ease";
+    shadow.display = "none";
 }

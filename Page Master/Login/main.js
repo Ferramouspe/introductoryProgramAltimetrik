@@ -11,8 +11,6 @@ function seePassword(){
     document.querySelector('.seePass').style.backgroundImage = "url(css/showpass.svg)";
 }
 
-
-
 function imagesCarrousel(){
     let carrouselImages = document.querySelector(".carrouselImages");
     let point = document.querySelectorAll(".point");
@@ -32,4 +30,8 @@ function imagesCarrousel(){
             circle[i].classList.add("active");
         })
     })
+}
+
+function automaticCarrousel(){
+    
 }

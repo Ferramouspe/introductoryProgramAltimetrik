@@ -74,8 +74,8 @@ h1 {
 	height: 16px;
 	color: #a6a6a6;
 }
-.pt-32 {
-	padding-top: 32px;
+.mt-32 {
+	margin-top: 32px;
 }
 .imageForSearchBar {
 	height: 43px;
@@ -90,8 +90,8 @@ h1 {
 	margin-right: 32.32px;
 	color: #ffffff;
 }
-.pt-44 {
-	padding-top: 44px;
+.mt-44 {
+	margin-top: 44px;
 }
 .logout,
 .logoutNav {
@@ -172,9 +172,9 @@ nav {
 	display: flex;
 	justify-content: space-between;
 	flex-direction: column;
-	height: 100vh;
 }
 .home {
+	width: fit-content;
 	font-family: Open Sans;
 	font-style: normal;
 	font-weight: 800;
@@ -186,6 +186,7 @@ nav {
 .reviews,
 .newRelases,
 .popular {
+	width: fit-content;
 	font-family: Open Sans;
 	font-style: normal;
 	font-weight: 800;
@@ -208,6 +209,7 @@ nav {
 .commingSoon,
 .lastSearches,
 .bestOfTheYear {
+	width: fit-content;
 	font-family: Open Sans;
 	font-style: normal;
 	font-weight: normal;
@@ -225,11 +227,11 @@ nav {
 	line-height: 30px;
 	color: #7cd235;
 }
-.pt-33 {
-	padding-top: 33px;
+.mt-33 {
+	margin-top: 33px;
 }
-.pt-11 {
-	padding-top: 11px;
+.mt-11 {
+	margin-top: 11px;
 }
 .pt-24 {
 	padding-top: 24px;
@@ -242,6 +244,7 @@ nav {
 }
 .subMenuDiv {
 	color: #ffffff;
+	width: max-content;
 }
 .subMenuDiv:hover #a {
 	color: #7cd235;
@@ -887,7 +890,7 @@ nav {
 }
 .cardDescription {
 	margin: 0px;
-	font-family: Open Sans;	
+	font-family: Open Sans;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 14px;
@@ -912,7 +915,25 @@ nav {
 	margin-left: 20px;
 	margin-right: 20px;
 }
-
+.navName {
+	display: none;
+}
+.navNameTitle {
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 28px;
+	line-height: 38px;
+	letter-spacing: 1.74222px;
+	color: #ffffff;
+}
+.secondShadow {
+	display: none;
+	position: fixed;
+	margin-left: 300px;
+	width: 100%;
+	height: 100%;
+}
 @media screen and (max-width: 1080px) {
 	.modal {
 		width: 100%;
@@ -930,7 +951,17 @@ nav {
 	.logoutSVG,
 	.pageTitle,
 	nav {
-		display: none;
+		position: fixed;
+		left: -400px;
+		background-color: #000000;
+		box-shadow: 14px 0px 36px 5px rgba(0, 0, 0, 0.62);
+		top: 0px;
+		bottom: 0px;
+	}
+	.navName {
+		display: flex;
+		margin-top: 34px;
+		margin-left: 40px;
 	}
 	.menuNav {
 		display: flex;
