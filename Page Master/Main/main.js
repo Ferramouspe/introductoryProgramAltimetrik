@@ -691,56 +691,26 @@ async function searched(text){
 
     for(let i=0; i<fetchSearchJson.results.length; i++){
         let fetch = fetchSearchJson.results[i];
-        let searchedCard = `<div class="card cardFlex" onclick="cardModal(${fetch.id})">
-        <div class="cardImage">
-            <image id="cardImageId" src='${backgroundImage(fetch.background_image)}'>
-        </div>
-        <div class="underCardImage">
-            <div class="leftPartCard">
-                <div class="forName">
-                    <h3 id="gameName">${fetch.name}</h3>
-                </div>
-                <div class="releaseDateDiv">
-                    <div>
-                        <h4 class="releaseDate">Release Date</h4>
-                    </div>
-                    <div>
-                        <h4 id="releaseDateId">${fetch.released}</h4>
-                    </div>
-                </div>
-                <hr class="cardLine">
-                <div class="genreDiv">
-                    <div>
-                        <h4 class="genre">Genre</h4>
-                    </div>
-                    <div class="forEllipsis">
-                        <h4 id="genreId">${showGenres(fetch)}</h4>
-                    </div>
-                </div>
-                <hr class="cardLine">
-            </div>
-            <div class="rightPartCard"> 
-                <div class="consols">
-                    ${cardConsols(fetch)}
-                </div>
-                <div class="numberOfGame">
-                    <h2 id="gameNumber">#${i+1}</h2>
-                </div>
-                <div class="forGift">
-                    <svg class="plus" width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2.7832 4.41406H0.515625V3.13086H2.7832V0.845703H4.06641V3.13086H6.33398V4.41406H4.06641V6.66992H2.7832V4.41406Z" fill="white"/>
-                    </svg>
-                    <svg class="gift" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3 2.5C3 1.11929 4.11929 0 5.5 0C6.88071 0 8 1.11929 8 2.5C8 1.11929 9.11929 0 10.5 0C11.8807 0 13 1.11929 13 2.5V2.506C13 2.576 13 2.776 12.962 3H15C15.5523 3 16 3.44772 16 4V5C16 5.55228 15.5523 6 15 6H1C0.447715 6 0 5.55228 0 5V4C0 3.44772 0.447715 3 1 3H3.038C3.01159 2.83668 2.99888 2.67144 3 2.506V2.5ZM4.068 3H7V2.5C7 1.9641 6.7141 1.46891 6.25 1.20096C5.7859 0.933013 5.2141 0.933013 4.75 1.20096C4.2859 1.46891 4 1.9641 4 2.5C4 2.585 4.002 2.774 4.045 2.93C4.05101 2.95385 4.05869 2.97724 4.068 3ZM11.932 3H9V2.5C9 1.67157 9.67157 1 10.5 1C11.3284 1 12 1.67157 12 2.5C12 2.585 11.998 2.774 11.955 2.93C11.9489 2.95381 11.9412 2.9772 11.932 3ZM15 7V14.5C15 15.3284 14.3284 16 13.5 16H9V7H15ZM1 14.5C1 15.3284 1.67157 16 2.5 16H7V7H1V14.5Z" fill="white"/>
-                    </svg>
-                </div>
-            </div>  
-        </div>
-    </div>`;
-    document.querySelector(".cardContainer").innerHTML += searchedCard;
+        let searchedCard = cardMaker(fetch, i-20);
+        document.querySelector(".cardContainer").innerHTML += searchedCard;
     }
     searchArray[searchArray.length] = text;
     loading = true;
+}
+
+function showSearches(){
+    let div = document.querySelector(".searchedDiv");
+
+    div.style.display = "flex";
+
+    if(searchArray.length == 0){
+        document.querySelector(".searchedDiv").innerHTML += `<h3 class="searchedElements>No previous searches<h3>`;
+        return;
+    }else{    
+        for(let i=0; i<searchArray.length; i++){
+            document.querySelector(".searchedDiv").innerHTML += `<h3 class="searchedElements>${searchArray[i]}<h3>`;
+        }
+    }
 }
 
 function openNav(){
