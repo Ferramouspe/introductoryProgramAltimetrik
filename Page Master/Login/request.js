@@ -1,19 +1,20 @@
-document.addEventListener("load", onLoad);
-function onLoad(){
-    document.getElementById("loginButtonId").addEventListener("click", validLogin);
-}
+// document.addEventListener("load", onLoad);
+
+// function onLoad(){
+document.getElementById("loginButtonId").addEventListener("click", validLogin);
+// }
 async function validLogin(e) {
     e.preventDefault();
     e.stopPropagation();
-   /*  let email = document.getElementById("loginUsername");
+    let email = document.getElementById("loginUsername").value;
     const emailRegEx = /^[a-zA-Z0-9.-]+@[a-zA-Z0-9]+\.[a-zA-Z]+[a-zA-Z]*$/;
-    let password = document.getElementById("loginPassword");
+    let password = document.getElementById("loginPassword").value;
     const passRegEx = /^[a-zA-Z0-9.-]{3,16}$/;
     
     let emailValidation = emailRegEx.test(email.value);
-    let passValidation = passRegEx.test(password.value); */
+    let passValidation = passRegEx.test(password.value); 
     if(true){
-        let fetchResponse = await fetch("http://localhost:3000/users", {method: "POST", mode: "cors", 
+        let fetchResponse = await fetch("http://localhost:3000/users", {method: "GET", mode: "cors", 
         headers: {'Content-Type': 'application/json'}, 
         body: JSON.stringify({"email": email, "password": password})});
         let jsonResponse = await fetchResponse.json();
