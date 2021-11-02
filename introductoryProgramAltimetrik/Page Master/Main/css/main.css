@@ -1,0 +1,993 @@
+html {
+	height: 100%;
+}
+body {
+	margin: 0px;
+	background-color: #000000;
+}
+header {
+	height: 120px;
+	background: linear-gradient(180deg, #7cd235 0%, #2bb34f 100%);
+	box-shadow: 1px -3px 36px rgba(0, 0, 0, 0.5);
+}
+h2,
+h3,
+h4,
+p {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+@media screen {
+	html,
+	body {
+		zoom: 90%;
+	}
+}
+.subHeader {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 32px;
+}
+h1 {
+	margin-left: 39px;
+	width: 198px;
+	height: 38px;
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 28px;
+	line-height: 38px;
+	letter-spacing: 1.74222px;
+	color: #ffffff;
+}
+.pageTitle {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin-left: 40px;
+}
+.searchInner {
+	display: flex;
+	align-items: center;
+}
+.search{
+	display: flex;
+	flex-direction: column;
+}
+.searchBar {
+	height: 41px;
+	width: 322px;
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 16px;
+	text-indent: 20px;
+	line-height: 22px;
+	border: 0px;
+	color: #a6a6a6;
+	background: #f1f1f1;
+	border-radius: 0px 20px 20px 0px;
+	outline: none;
+}
+.searchSVG {
+	margin-top: 13px;
+	margin-left: 20px;
+	width: 16px;
+	height: 16px;
+	color: #a6a6a6;
+}
+.mt-32 {
+	margin-top: 32px;
+}
+.imageForSearchBar {
+	height: 43px;
+	width: 40px;
+	background: #f1f1f1;
+	border-radius: 20px 0px 0px 20px;
+}
+.logoutSVG,
+.logoutSVGNav {
+	width: 16px;
+	height: 12px;
+	margin-right: 32.32px;
+	color: #ffffff;
+}
+.mt-44 {
+	margin-top: 44px;
+}
+.logout,
+.logoutNav {
+	text-decoration: none;
+	margin-right: 11px;
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 19px;
+	color: #ffffff;
+}
+.profileImage {
+	width: 43.87px;
+	height: 45.33px;
+	background-image: url(profileImage.jpg);
+	background-size: 46px;
+	border-radius: 100px;
+}
+.logoutAndProfile {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	margin-right: 40px;
+}
+.logoutAndProfileNav {
+	margin-bottom: 20px;
+	align-items: center;
+	display: none;
+}
+.pl-40 {
+	padding-left: 40px;
+}
+.pr-40 {
+	padding-right: 40px;
+}
+.line {
+	width: 100%;
+	margin: 0px;
+	position: relative;
+	border: 1px solid #ffffff;
+	background: #ffffff;
+}
+.forLine {
+	display: flex;
+	justify-content: center;
+	margin-top: 18px;
+}
+.mainBody {
+	display: flex;
+}
+.secondHeader {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+}
+.secondBody {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+.cardContainer {
+	margin-top: 30px;
+}
+.subNavTop {
+	display: flex;
+	flex-direction: column;
+	width: 260px;
+	padding-left: 40px;
+	background-color: #000000;
+}
+.subNavBottom {
+	padding-left: 40px;
+}
+nav {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+}
+.home {
+	width: fit-content;
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: 800;
+	font-size: 22px;
+	line-height: 30px;
+	color: #7cd235;
+	text-decoration: none;
+}
+.reviews,
+.newRelases,
+.popular {
+	width: fit-content;
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: 800;
+	font-size: 22px;
+	line-height: 30px;
+	color: #ffffff;
+	text-decoration: none;
+}
+.home:hover,
+.reviews:hover,
+.newRelases:hover,
+.popular:hover {
+	font-weight: 800;
+	font-size: 22px;
+	line-height: 30px;
+	color: #7cd235;
+}
+.thisWeek,
+.thisMonth,
+.commingSoon,
+.lastSearches,
+.bestOfTheYear {
+	width: fit-content;
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 22px;
+	line-height: 30px;
+	color: #ffffff;
+	text-decoration: none;
+}
+.thisWeek:hover,
+.thisMonth:hover,
+.commingSoon:hover,
+.lastSearches:hover,
+.bestOfTheYear:hover {
+	font-size: 22px;
+	line-height: 30px;
+	color: #7cd235;
+}
+.mt-33 {
+	margin-top: 33px;
+}
+.mt-11 {
+	margin-top: 11px;
+}
+.pt-24 {
+	padding-top: 24px;
+}
+.pr-14 {
+	padding-right: 14px;
+}
+.pl-24 {
+	padding-left: 24px;
+}
+.subMenuDiv {
+	color: #ffffff;
+	width: max-content;
+}
+.subMenuDiv:hover #a {
+	color: #7cd235;
+}
+.subMenuDiv:hover {
+	color: #7cd235;
+}
+.newAndTrending {
+	margin: 0px;
+	font-family: Open Sans;
+	font-weight: 800;
+	font-size: 55px;
+	line-height: 75px;
+	color: #ffffff;
+}
+.basedOn {
+	margin: 0px;
+	height: 25px;
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 25px;
+	color: #ffffff;
+}
+.columns {
+	display: flex;
+	justify-content: flex-end;
+	padding-top: 51px;
+	padding-right: 40px;
+}
+#columns3Id {
+	background-color: #515151;
+	border-radius: 10px;
+}
+#columns3Id:hover {
+	background-color: #7d7d7d !important;
+	border-radius: 10px;
+}
+#column1Id {
+	background-color: #303030;
+	border-radius: 10px;
+}
+#column1Id:hover {
+	background-color: #7d7d7d !important;
+	border-radius: 10px;
+}
+.card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 12px;
+}
+.cardFlex {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.cardGrid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(363px, 1fr));
+}
+.cardImage {
+	width: 363px;
+	height: 204.25px;
+	border-radius: 10px 10px 0px 0px;
+}
+.cardImageImg {
+	width: 363px;
+	height: 204.25px;
+	border-radius: 10px 10px 0px 0px;
+}
+.underCardImage {
+	display: flex;
+	flex-direction: column;
+	width: 363px;
+	height: 109.75px;
+	background-color: #303030;
+	border-radius: 0px 0px 10px 10px;
+}
+.topPartCard {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	height: 24px;
+	margin-top: 9.75px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+.middlePartCard {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-top: 5px;
+}
+.middleLeftPartCard {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-left: 20px;
+}
+.middleRightPartCard {
+	display: flex;
+	align-items: flex-end;
+	flex-direction: column;
+	margin-right: 20px;
+}
+.numberOfGame {
+	display: flex;
+	justify-content: flex-end;
+	margin-left: 40px;
+}
+.mt-3 {
+	margin-top: 3px;
+}
+.consols {
+	width: 59.97px;
+	height: 13px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+.svgCard {
+	margin-right: 3px;
+}
+.svgModal {
+	margin-right: 5px;
+}
+.gameFinder {
+	margin: 0px;
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 28px;
+	line-height: 38px;
+	letter-spacing: 1.74222px;
+}
+#gameName {
+	margin: 0%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: 800;
+	font-size: 23px;
+	line-height: 31px;
+	color: #ffffff;
+}
+.forName {
+	display: flex;
+	width: 220px;
+	height: 31px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+#gameNumber {
+	margin: 0%;
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 22px;
+	color: #2bb34f;
+}
+.forGift {
+	margin-top: 6px;
+	width: 47px;
+	height: 24px;
+	background: linear-gradient(180deg, #7cd235 0%, #2bb34f 100%);
+	border-radius: 10px;
+}
+.plus {
+	margin-left: 10px;
+	margin-bottom: 3px;
+}
+.gift {
+	margin-right: 10px;
+	margin-top: 3px;
+}
+.releaseDateDiv {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 3px;
+}
+.releaseDate,
+.genre {
+	margin: 0%;
+	margin-right: 30px;
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 12px;
+	line-height: 16px;
+	color: #939393;
+}
+#genreId,
+#releaseDateId {
+	margin: 0%;
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 12px;
+	line-height: 16px;
+	color: #939393;
+	text-overflow: ellipsis;
+}
+.cardLine {
+	margin: 0%;
+	width: 100%;
+	height: 1px;
+	background: #3d3d3d;
+	border: 0px solid #3d3d3d;
+}
+.genreDiv {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 6.5px;
+}
+
+.forEllipsis {
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+/* MODAL CSS */
+
+.shadow {
+	display: none;
+	z-index: 2;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.784937);
+	transform: translate(-50%, -50%);
+	position: fixed;
+	top: 50%;
+	left: 50%;
+}
+.leftDescription {
+	width: 234px;
+}
+.rightDescription {
+	width: 234px;
+}
+.backImage {
+	width: 100%;
+	position: absolute;
+	z-index: -1;
+	overflow: hidden;
+}
+.backgroundModal {
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		to bottom,
+		transparent 0%,
+		#303030 60%,
+		#303030 75%
+	);
+}
+.modal {
+	z-index: 2;
+	zoom: 85%;
+	overflow: hidden;
+	position: fixed;
+	background-blend-mode: normal;
+	display: none;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	margin: auto;
+	flex-direction: column;
+	border-radius: 10px;
+	width: 1080px;
+	height: 794px;
+}
+.topPart {
+	display: flex;
+	justify-content: space-between;
+}
+.cross {
+	margin: 20px;
+}
+.modalConsols {
+	margin-top: 34px;
+}
+.modalName {
+	margin: 0px;
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: 800;
+	font-size: 60px;
+	line-height: 82px;
+	color: #ffffff;
+}
+.ml-79 {
+	margin-left: 79px;
+}
+.h-27 {
+	height: 27px;
+}
+.mr-20 {
+	margin-right: 20px;
+}
+.mt-20 {
+	margin-top: 20px;
+}
+.ml-51 {
+	margin-left: 51px;
+}
+.modalContent {
+	display: flex;
+	justify-content: center;
+	margin-right: 20px;
+}
+.leftPart {
+	display: flex;
+	flex-direction: column;
+	width: 468px;
+}
+.ratings {
+	margin-top: 44px;
+	display: flex;
+	flex-direction: row;
+}
+.modalDate,
+.modalTop,
+.modalGlobalTop {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: #ffffff;
+}
+.gameDate {
+	margin-left: 15px;
+}
+.gameDate,
+.topNumberLetters,
+.topGlobalNumberLetters {
+	margin-right: 15px;
+	margin-top: 3px;
+	margin-bottom: 3px;
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 22px;
+	text-align: right;
+	color: #303030;
+}
+.topNumber,
+.topGlobalNumber {
+	margin: 0px;
+	margin-right: 7px;
+	margin-left: 15px;
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: 800;
+	font-size: 20px;
+	line-height: 27px;
+	color: #2bb34f;
+}
+.firstModalButtons {
+	margin-top: 34px;
+	display: flex;
+	flex-direction: row;
+}
+.whereBuyDiv,
+.wishListDiv {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: row;
+	width: 125px;
+	height: 50px;
+	margin-right: 20px;
+	border: 1px solid #979797;
+	box-sizing: border-box;
+	border-radius: 10px;
+}
+.whereBuyText,
+.wishListText {
+	display: flex;
+	flex-direction: column;
+}
+.whereBuyText {
+	margin-left: 20px;
+}
+.wishListText {
+	margin-left: 10px;
+}
+.whereTo,
+.addTo {
+	margin: 0px;
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 17px;
+	color: #ffffff;
+}
+.plus2 {
+	margin: 0px;
+	margin-right: 15px;
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 33px;
+	text-align: center;
+	color: #ffffff;
+}
+.buy,
+.wishList {
+	margin: 0px;
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: 800;
+	font-size: 12px;
+	line-height: 17px;
+	color: #ffffff;
+}
+.wishListDiv {
+	width: 151px;
+	height: 50px;
+	background: linear-gradient(180deg, #7cd235 0%, #2bb34f 100%);
+	border-radius: 10px;
+}
+.wishListIcon {
+	margin-right: 12px;
+}
+.modalDescription {
+	display: flex;
+	margin-top: 32px;
+	width: 468px;
+	height: 90px;
+	overflow-y: scroll;
+}
+.modalDescriptionText {
+	margin: 0px;
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 19px;
+	color: #ffffff;
+}
+.modalDescriptionText::selection {
+	background: #7cd235;
+}
+.modalDescription::-webkit-scrollbar {
+	width: 7px;
+}
+.modalDescription::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-color: #7cd235;
+}
+.secondModalButtons {
+	margin-top: 32px;
+	display: flex;
+	flex-direction: row;
+}
+.commentDiv,
+.reviewDiv {
+	margin-right: 24px;
+	width: 141px;
+	height: 40px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: #515151;
+	border-radius: 10px;
+}
+.leftComment,
+.review {
+	margin: 0px;
+	margin-left: 11px;
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 16px;
+	text-align: right;
+	color: #ffffff;
+}
+.leftCommentSVG {
+	margin-right: 13.07px;
+}
+.modalPlus {
+	margin: 0px;
+	margin-right: 14px;
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: 800;
+	font-size: 24px;
+	line-height: 33px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	color: #ffffff;
+}
+.modalDescription2 {
+	margin-top: 32px;
+	display: flex;
+	flex-direction: row;
+}
+.modalGameName {
+	height: 85px;
+	width: 912px;
+	overflow: hidden;
+}
+.plattformsText,
+.modalReleaseText,
+.publisherText,
+.websiteText,
+.modalGenreText,
+.developerText,
+.ageRatingText {
+	margin: 0px;
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 12px;
+	line-height: 16px;
+	color: #939393;
+}
+.plattforms,
+.modalRelease,
+.publisher,
+.website,
+.modalGenre,
+.developer,
+.ageRating {
+	margin: 0px;
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 12px;
+	line-height: 16px;
+	text-decoration-line: underline;
+	color: #ffffff;
+}
+.modalRelease,
+.ageRating {
+	text-decoration: none;
+}
+.rightPart {
+	margin-top: 44px;
+	margin-left: 52px;
+	display: flex;
+	flex-direction: column;
+}
+.topImage {
+	margin-bottom: 16px;
+	width: 392px;
+	height: 217px;
+	background-color: #ffffff;
+}
+.gridImages {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 19px;
+}
+.littleImages {
+	width: 186px;
+	height: 104px;
+	background-color: #ffffff;
+}
+.modalImage {
+	width: 100%;
+	height: 100%;
+}
+.menuNav {
+	display: none;
+	margin-left: 40px;
+}
+.columns3SVG,
+.column1SVG,
+.cardImage,
+.underCardImage,
+.imageForSearchBar {
+	cursor: pointer;
+}
+.underCardImage1,
+.cardImage1,
+.cardImageImg1 {
+	width: 696px;
+}
+.underCardImage1 {
+	height: 223px;
+	background-color: #303030;
+	border-radius: 0px 0px 10px 10px;
+}
+.cardImage1,
+.cardImageImg1 {
+	height: 315px;
+	border-radius: 10px 10px 0px 0px;
+}
+.middleRightPartCard1 {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	flex-direction: row;
+	margin-right: 20px;
+	margin-top: 17px;
+}
+
+.middleLeftPartCard1 {
+	display: flex;
+	align-items: baseline;
+	flex-direction: row;
+	margin-top: 17px;
+	margin-left: 20px;
+}
+.descriptionPartCard {
+	display: none;
+	margin: 0px;
+	width: 583px;
+	height: 85px;
+}
+.descriptionPartCard1 {
+	display: flex;
+	justify-content: center;
+	margin-left: 40px;
+	width: 583px;
+	height: 78px;
+	margin-top: 20px;
+}
+.genreDiv1 {
+	display: flex;
+	justify-content: space-between;
+	margin-left: 40px;
+	width: 170px;
+}
+.releaseDateDiv1 {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 3px;
+	width: 170px;
+}
+.cardDescription {
+	margin: 0px;
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 19px;
+	color: #ffffff;
+}
+.forGift1 {
+	margin-left: 160px;
+	width: 47px;
+	height: 24px;
+	background: linear-gradient(180deg, #7cd235 0%, #2bb34f 100%);
+	border-radius: 10px;
+}
+.topPartCard1 {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	height: 24px;
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+.navName {
+	display: none;
+}
+.navNameTitle {
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 28px;
+	line-height: 38px;
+	letter-spacing: 1.74222px;
+	color: #ffffff;
+}
+.secondShadow {
+	display: none;
+	position: fixed;
+	margin-left: 300px;
+	width: 100%;
+	height: 100%;
+}
+.searchedDiv {
+	display: none;
+	z-index: 1;
+	background-color: #f1f1f1;
+	width: 366px;
+	top: 76px;
+	height: fit-content;
+	position: absolute;
+	border-radius: 0px 0px 20px 20px;
+}
+.searchedElements {
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 16px;
+	text-indent: 20px;
+	color: #a6a6a6;
+}
+@media screen and (max-width: 1080px) {
+	.modal {
+		width: 100%;
+		height: 100%;
+		border-radius: 0px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.newAndTrending,
+	.basedOn {
+		margin-left: 40px;
+	}
+	.logout,
+	.logoutSVG,
+	.pageTitle,
+	nav {
+		position: fixed;
+		left: -400px;
+		background-color: #000000;
+		box-shadow: 14px 0px 36px 5px rgba(0, 0, 0, 0.62);
+		top: 0px;
+		bottom: 0px;
+	}
+	.navName {
+		display: flex;
+		margin-top: 34px;
+		margin-left: 40px;
+	}
+	.menuNav {
+		display: flex;
+	}
+	.logoutAndProfileNav {
+		display: flex;
+	}
+}
