@@ -413,7 +413,7 @@ async function cardModal(id){
         document.querySelector(".modalRelease").textContent = modalReleaseDate;
 
         const newApiInfo = await getNewApi(id);
-        console.log(newApiInfo);
+        
         document.querySelector(".developer").textContent = modalDevelopers(newApiInfo);
         document.querySelector(".publisher").textContent = modalPublishers(newApiInfo);
         document.querySelector(".website").textContent = modalWebsite(newApiInfo.website);
@@ -645,7 +645,7 @@ async function getNewApi(id){
     return fetchInfoJson;
 }
 
-async function screenshotsApi(slug){
+/* async function screenshotsApi(slug){
     const fetchSlug = await fetch(`https://api.rawg.io/api/games/${slug}/screenshots?key=c692385ef58c4bc98d34e178c3e7c2ff`);
     const fetchSlugJson = await fetchSlug.json();
     
@@ -654,17 +654,42 @@ async function screenshotsApi(slug){
 
     if(imagesForModal.length == 0){
         for(let i=0; i<modalImages.length; i++){
-            modalImages[i].setAttribute("src", "CSS/NoImageAvailable.jpg");
+            modalImages[i].setAttribute("src", "CSS/noImageAvailable.jpg");
         }
         return;
     }
     for(let i=0; i<modalImages.length; i++){
         if(imagesForModal[i] == undefined){
-            modalImages[i].setAttribute("src", "CSS/NoImageAvailable.jpg");
+            modalImages[i].setAttribute("src", "CSS/noImageAvailable.jpg");
         }else{
             modalImages[i].setAttribute("src", `${backgroundImage(imagesForModal[i].image)}`);
         }
     }
+} */
+
+
+function screenshotsApi(slug){
+    fetch(`https://api.rawg.io/api/games/${slug}/screenshots?key=c692385ef58c4bc98d34e178c3e7c2ff`)
+    .then( fetchSlug => fetchSlug.json() )
+    .then( fetchJson => {
+        let modalImages = document.querySelectorAll(".modalImage");
+        let imagesForModal = fetchJson.results;
+
+        if(imagesForModal.length == 0){
+            for(let i=0; i<modalImages.length; i++){
+                modalImages[i].setAttribute("src", "CSS/noImageAvailable.jpg");
+            }
+            return;
+        }
+        for(let i=0; i<modalImages.length; i++){
+            if(imagesForModal[i] == undefined){
+                modalImages[i].setAttribute("src", "CSS/noImageAvailable.jpg");
+            }else{
+                modalImages[i].setAttribute("src", `${backgroundImage(imagesForModal[i].image)}`);
+            }
+        }
+        return;
+    })
 }
 
 function cardModalNone(){
@@ -729,4 +754,9 @@ function closeNav(){
     nav.left = "-500px";
     nav.transition = "1s ease";
     shadow.display = "none";
+}
+
+function logout(){
+    window.sessionStorage.removeItem("token");
+    window.location = "../login/login.html";
 }
